@@ -30,9 +30,9 @@ data = {
 ],
     "생기부": [" 여기에 입력 ", " 여기에 입력", " 여기에 입력 ", "여기에 입력"]
 }
+# 생기부 질문은 알아서
 
 
-# TTS 함수
 def speak(text):
     tts = gTTS(text, lang="ko")
     date_string = datetime.now().strftime("%d%m%Y%H%M%S")
@@ -41,8 +41,7 @@ def speak(text):
     playsound.playsound(filename)
 
 
-# 카테고리별로 데이터 랜덤으로 선택하여 읽기
-# 카테고리별로 데이터 랜덤으로 선택하여 읽기
+
 def read_category(category):
     category_data = data[category]
     num_items_to_select = min(len(category_data), random.randint(2, 3))
@@ -53,7 +52,7 @@ def read_category(category):
 
 
 
-# 메인 함수
+
 def main():
     print("프로그램을 시작합니다.")
 
